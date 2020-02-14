@@ -7,7 +7,6 @@ const useDarkMode = (initialValue) => {
     const [darkMode, setDarkMode] = useLocalStorage(initialValue);
     
     useEffect(() => {
-        document.querySelector('body').dataset.testid = "dmTestId"; 
 
         if(darkMode === true){
             document.querySelector('body').classList.add('dark-mode')

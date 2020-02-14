@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, toBeInTheDocument, fireEvent, waitForElement } from '@testing-library/react';
+import { render, toBeInTheDocument, fireEvent, waitForElement, waitForDomChange } from '@testing-library/react';
 import "@testing-library/jest-dom/extend-expect";
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -23,11 +23,9 @@ test('Dark Mode toggles', async () => {
   
   
   fireEvent.click(getByTestId(/button/i));
+  console.log('this is document.body', document.body.className);
 
-  const output = await waitForElement( 
-    () => getByTestId('dmTestId')
- );
-  expect(navTitle).toBeInTheDocument();
+  expect(document.body.className).toBe('dark-mode');
 });
 
 
