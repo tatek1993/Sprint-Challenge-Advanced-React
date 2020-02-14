@@ -21,7 +21,7 @@ const Nav = () => {
   return (
     <nav className="nav">
       <h1 className="nav-title">Meet the Players</h1>
-      <button onClick={toggle} className="btn">Toggle Dark Mode</button>
+      <button data-testid='button' onClick={toggle} className="btn">Toggle Dark Mode</button>
     </nav>
   );
 };

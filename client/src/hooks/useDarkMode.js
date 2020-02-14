@@ -6,12 +6,12 @@ const useDarkMode = (initialValue) => {
     console.log("this is uselocalstorage", useLocalStorage);
     const [darkMode, setDarkMode] = useLocalStorage(initialValue);
     
-
-
     useEffect(() => {
+        document.querySelector('body').dataset.testid = "dmTestId"; 
 
         if(darkMode === true){
             document.querySelector('body').classList.add('dark-mode')
+            
         } else {
             return document.querySelector('body').classList.remove('dark-mode')
         }

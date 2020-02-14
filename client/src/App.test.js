@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, toBeInTheDocument } from '@testing-library/react';
+import { render, toBeInTheDocument, fireEvent, waitForElement } from '@testing-library/react';
 import "@testing-library/jest-dom/extend-expect";
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -18,5 +18,16 @@ test('Nav title renders', () => {
   expect(navTitle).toBeInTheDocument();
 });
 
+test('Dark Mode toggles', async () => {
+  const { getByTestId } = render(<App />);
+  
+  
+  fireEvent.click(getByTestId(/button/i));
+
+  const output = await waitForElement( 
+    () => getByTestId('dmTestId')
+ );
+  expect(navTitle).toBeInTheDocument();
+});
 
 
