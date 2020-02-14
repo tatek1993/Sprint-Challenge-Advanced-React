@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import axios from "axios";
 import './App.css';
 import PlayerCard from "./Components/PlayerCard";
+import Nav from "./Components/Nav";
 
 class App extends Component {
   constructor() {
@@ -25,7 +26,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <h1>These are the Players</h1>
+        <Nav />
         {this.state.players.map(player => (
           <PlayerCard key={player.id} player={player}/>
         ))}
