@@ -1,3 +1,17 @@
+body {
+  background-color: #63C7B2;
+  background-image: url(./images/light-mode.jpg);
+  background-repeat: repeat;
+  color: #1B065E;
+}
+
+.dark-mode {
+  color: #fff;
+  background-color: #313843;
+  background-image: url(./images/dark-mode.jpg);
+  background-repeat: repeat;
+}
+
 .App {
   text-align: center;
 }
