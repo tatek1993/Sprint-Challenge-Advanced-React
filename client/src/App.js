@@ -17,13 +17,18 @@ class App extends Component {
       .get(`http://localhost:5000/api/players`)
       .then(res => {
         console.table("This is res.data", res.data);
+        this.setState({players: res.data})
       })
+      .catch()
   }
 
   render(){
     return (
       <div className="App">
         <h1>These are the Players</h1>
+        {this.state.players.map(player => (
+          <PlayerCard key={player.id} player={player}/>
+        ))}
       </div>
     );
   }  
